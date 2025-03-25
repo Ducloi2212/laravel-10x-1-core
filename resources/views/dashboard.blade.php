@@ -7,7 +7,7 @@
     <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 </head>
 <body>
-<nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color: #e3f2fd;">
+<nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color:rgb(191, 54, 250);">
     <div class="container">
         <a class="navbar-brand mr-auto" href="#">Laravel Training</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
@@ -22,6 +22,9 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="{{ route('user.createUser') }}">Create user</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('user.createUser') }}">Home</a>
                     </li>
                 @else
                     <li class="nav-item">
