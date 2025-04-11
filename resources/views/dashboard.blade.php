@@ -1,40 +1,30 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>Laravel 10.48.0 - CRUD User Example</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
     <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
     <script type="text/javascript" src="{{ asset('js/scripts.js') }}"></script>
 </head>
+
 <body>
-<nav class="navbar navbar-light navbar-expand-lg mb-5" style="background-color:rgb(191, 54, 250);">
-    <div class="container">
-        <a class="navbar-brand mr-auto" href="#">Laravel Training</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav">
+
+    <body class="flex flex-col items-center justify-center min-h-screen bg-gray-100">
+        <header class="w-full bg-white py-4 border-b">
+            <nav class="flex justify-center space-x-4">
                 @guest
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('login') }}">Login</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.createUser') }}">Create user</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('user.createUser') }}">Home</a>
-                    </li>
+                <a href="{{ route('login') }}" class="text-black">Home</a>
+                <a href="{{ route('login') }}" class="text-black">Đăng nhập</a>
+                <a href="{{ route('user.createUser') }}" class="text-black">Đăng ký</a>
                 @else
-                    <li class="nav-item">
-                        <a class="nav-link" href="{{ route('signout') }}">Logout</a>
-                    </li>
+                <a href="{{ route('user.list') }}" class="text-black">Home</a>
+                <a href="{{ route('signout') }}" class="text-black">Đăng xuất</a>
                 @endguest
-            </ul>
-        </div>
-    </div>
-</nav>
-@yield('content')
-</body>
+            </nav>
+        </header>
+        @yield('content')
+    </body>
+
 </html>
