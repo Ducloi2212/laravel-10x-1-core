@@ -16,6 +16,22 @@
                 @endif
             </div>
             <div class="mb-4">
+                <label for="username" class="block text-gray-700">Like</label>
+                <input type="text" placeholder="Like" id="like" class="w-full px-3 py-2 border rounded" name="like" required
+                    autofocus value="{{ $user->like }}">
+                @if ($errors->has('like'))
+                <span class="text-danger">{{ $errors->first('like') }}</span>
+                @endif
+            </div>
+            <div class="mb-4">
+                <label for="username" class="block text-gray-700">Github</label>
+                <input type="text" placeholder="Github" id="github" class="w-full px-3 py-2 border rounded" name="github" required
+                    autofocus value="{{ $user->github }}">
+                @if ($errors->has('github'))
+                <span class="text-danger">{{ $errors->first('github') }}</span>
+                @endif
+            </div>
+            <div class="mb-4">
                 <label for="email" class="block text-gray-700">Email</label>
                 <input type="Email" placeholder="Email" id="email" class="w-full px-3 py-2 border rounded" name="email" required
                     autofocus value="{{ $user->email }}">

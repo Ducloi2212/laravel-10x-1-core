@@ -13,6 +13,10 @@
                     <th
                         class="border border-gray-300 px-4 py-2">Username</th>
                     <th
+                        class="border border-gray-300 px-4 py-2">Like</th>
+                    <th
+                        class="border border-gray-300 px-4 py-2">Github</th>
+                    <th
                         class="border border-gray-300 px-4 py-2">Email</th>
                     <th class="border border-gray-300 px-4 py-2">Thao
                         tác</th>
@@ -25,6 +29,10 @@
                         class="border border-gray-300 px-4 py-2 text-center">{{ $user->id }}</td>
                     <td
                         class="border border-gray-300 px-4 py-2 text-center">{{ $user->name }}</td>
+                    <td
+                        class="border border-gray-300 px-4 py-2 text-center">{{ $user->like }}</td>
+                    <td
+                        class="border border-gray-300 px-4 py-2 text-center">{{ $user->github }}</td>
                     <td
                         class="border border-gray-300 px-4 py-2 text-center">{{ $user->email }}</td>
                     <td

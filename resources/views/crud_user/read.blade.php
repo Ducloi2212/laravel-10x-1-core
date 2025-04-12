@@ -9,6 +9,14 @@
                 <span class="ml-4">{{$messi->name}}</span>
             </div>
             <div class="mb-4">
+                <span class="font-semibold">Like: </span>
+                <span class="ml-4">{{$messi->like}}</span>
+            </div>
+            <div class="mb-4">
+                <span class="font-semibold">Github: </span>
+                <span class="ml-4">{{$messi->github}}</span>
+            </div>
+            <div class="mb-4">
                 <span class="font-semibold">Email: </span>
                 <span class="ml-4">{{$messi->email}}</span>
             </div>
