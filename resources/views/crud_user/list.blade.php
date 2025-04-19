@@ -14,6 +14,8 @@
                         class="border border-gray-300 px-4 py-2">Username</th>
                     <th
                         class="border border-gray-300 px-4 py-2">Email</th>
+                    <th
+                        class="border border-gray-300 px-4 py-2">Roles</th>
                     <th class="border border-gray-300 px-4 py-2">Thao
                         tác</th>
                 </tr>
@@ -29,6 +31,13 @@
                         class="border border-gray-300 px-4 py-2 text-center">{{ $user->email }}</td>
                     <td
                         class="border border-gray-300 px-4 py-2 text-center">
+                        @foreach($user->roles as $role)
+                                        <a href="{{ route('user.role', ['id' => $role->id]) }}">
+                                            {{ $role->name . ' | ' }}
+                                        </a>
+                                    @endforeach</td>
+                    <td
+                        class="border border-gray-300 px-4 py-2 text-center">
                         <a href="{{ route('user.updateUser', ['id' => $user->id]) }}" class="text-blue-500">Edit</a> |
                         <a href="{{ route('user.readUser', ['id' => $user->id]) }}" class="text-blue-500">View</a> |
                         <a href="{{ route('user.deleteUser', ['id' => $user->id]) }}" class="text-blue-500">Delete</a>
@@ -37,6 +46,10 @@
                 @endforeach
             </tbody>
         </table>
+    </div>
+    <br>
+    <div>
+        {!! $users->links('pagination::bootstrap-5') !!}
     </div>
 </main>
 
