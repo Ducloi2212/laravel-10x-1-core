@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Session;
 use App\Models\User;
+use App\Models\Order;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -129,7 +130,8 @@ class CrudUserController extends Controller
     {
         if (Auth::check()) {
             $users = User::paginate(5);
-            return view('crud_user.list', ['users' => $users]);
+            $orders = Order::all();
+            return view('crud_user.list', ['users' => $users, 'orders' => $orders]);
         }
 
         return redirect("login")->withSuccess('You are not allowed to access');

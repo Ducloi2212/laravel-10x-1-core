@@ -15,6 +15,8 @@
                     <th
                         class="border border-gray-300 px-4 py-2">Email</th>
                     <th
+                        class="border border-gray-300 px-4 py-2">Orders</th>
+                    <th
                         class="border border-gray-300 px-4 py-2">Roles</th>
                     <th class="border border-gray-300 px-4 py-2">Thao
                         tác</th>
@@ -29,6 +31,13 @@
                         class="border border-gray-300 px-4 py-2 text-center">{{ $user->name }}</td>
                     <td
                         class="border border-gray-300 px-4 py-2 text-center">{{ $user->email }}</td>
+                    <td
+                        class="border border-gray-300 px-4 py-2 text-center">
+                        @foreach($user->orders as $order)
+                                        <a href="{{ route('order.product', ['id' => $order->id]) }}">
+                                            {{ $order-> total_amount }}
+                                        </a>
+                                    @endforeach</td>
                     <td
                         class="border border-gray-300 px-4 py-2 text-center">
                         @foreach($user->roles as $role)
